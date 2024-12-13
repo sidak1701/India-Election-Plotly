@@ -9,7 +9,7 @@ import plotly.express as px
 
 @app.route("/")
 def index():
-    df = pd.read_csv("application\eci_cor.csv")
+    df = pd.read_csv("application/eci_cor.csv")
     total_votes = df.groupby('State').sum()
     import plotly.express as px
     percentage_votes = (total_votes['EVM Votes']/total_votes['Total Votes'])*100
