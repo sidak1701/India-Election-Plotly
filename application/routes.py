@@ -4,7 +4,7 @@ import pandas as pd
 import json
 import plotly
 import plotly.express as px
-from application.data import get_party_votes_for_state, get_map_data, get_piechart_data
+from application.data import get_party_votes_for_state, get_map_data, get_piechart_data, get_vote_type_distribution
 
 
 df = pd.read_csv("application/eci_cor.csv")
@@ -19,6 +19,13 @@ def index():
 def barchart():
     state = request.json['state']
     data = get_party_votes_for_state(state)
+    return jsonify(data)
+
+
+@app.route("/barchart2", methods=['POST'])
+def barchart2():
+    state = request.json['state']
+    data = get_vote_type_distribution(state)
     return jsonify(data)
 
 
