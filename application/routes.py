@@ -6,9 +6,11 @@ import plotly
 import plotly.express as px
 from application.data import get_party_votes_for_state, get_map_data, get_piechart_data, get_vote_type_distribution
 
-
+# import CSV file
 df = pd.read_csv("application/eci_cor.csv")
 
+
+# defining the routes
 @app.route("/")
 def index():
     data = get_party_votes_for_state('')
