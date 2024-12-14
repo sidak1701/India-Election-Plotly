@@ -145,7 +145,7 @@ def get_vote_type_distribution(state):
   fig.add_trace(go.Bar(
       x=top_5['Party'],
       y=percent_stack1,
-      name='Total Votes',
+      name='EVM Votes',
       marker_color='blue'  # Color for the first stack
   ))
 
@@ -153,7 +153,7 @@ def get_vote_type_distribution(state):
   fig.add_trace(go.Bar(
       x=top_5['Party'],
       y=percent_stack2,
-      name='EVM Votes',
+      name='Postal Votes',
       marker_color='orange'  # Color for the second stack
   ))
 
